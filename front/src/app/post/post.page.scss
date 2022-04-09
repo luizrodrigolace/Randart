@@ -1,0 +1,333 @@
+.toolbar-header{
+    --background:#FFE5B7;
+
+    position: relative;
+}
+
+.toolbar-header::after{
+    content: "";
+
+    background-color: #F2800A;
+
+    height: 2%;
+    width: 80%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconBackButton{
+    color: #FF9121;
+    margin-left:3%;
+
+    font-size: 2.5em;
+}
+
+.box-header-blank{
+    visibility: hidden;
+}
+
+.box-header-text{
+    width: 30%;
+
+    margin-top: 5%;
+}
+
+.header-text{
+    color: #F2800A;
+
+    font-size: 2em;
+    font-weight: bold;
+
+    margin: 0;
+}
+
+.header-title-span{
+    color: #FDBC59;
+}
+
+ion-content{
+    width:100vw;
+    height: 100vh;
+    --background: url('/../assets/fundo/fundoPost.png')
+}
+
+.conteinerGeneralPost{
+    width: 90%;
+    height: 90%;
+    margin:auto;
+    margin-top:7%;
+
+    background: #F8F8F8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px 30px 0px 0px;
+    z-index:0;
+}
+
+.firstPartPost{
+    display:flex;
+    flex-direction:row;
+    
+    margin-bottom:3%;
+    margin-left:5%;
+
+    ion-avatar{
+        margin-top:4%;
+        border: 1px solid #FF9121;
+    }
+}
+
+.textProfilePost{
+
+    color: chocolate;
+    margin-left:4%;
+    margin-top:5%;    
+    
+    p{
+        font-weight:  bold;
+        color:chocolate;
+        margin:0;
+    }
+
+    ion-chip{
+        margin:0;
+        padding:0;
+        
+    }
+}
+
+.picturePost{
+
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    height: 35%;
+
+    img{
+        width:80%;
+        height:90%;
+        
+        border-radius:20px;
+    }
+}
+
+.iconsPost{
+    display:flex;
+    justify-content: space-between;  
+    align-items: center;
+
+    height:7%; 
+    
+    ion-icon{
+        color:chocolate;
+    
+        height: 70%;
+        width: 11%;
+    
+        margin-right:5%;
+        margin-left:5%;
+    }
+}
+
+
+.commentPost{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    color:black;
+    height:17%;
+
+    p{
+        
+        display: -webkit-box;
+        -webkit-line-clamp: 3;        
+        -webkit-box-orient: vertical; 
+        overflow:hidden;       
+        text-overflow: ellipsis;
+        width:80%;
+        
+
+        margin:0;
+    }
+
+    .iconEditComment{
+
+        color:red;
+        margin-left:2%;     
+        font-size:1.4em;   
+    }
+}
+
+.conteinerGeneralComments{
+    position:absolute;
+    top:72%;    
+
+    height:120%;
+    width:100%;
+    overflow: visible;
+
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-image: url('/../assets/fundo/fundoPostComentario.png');
+
+    border-radius: 30px 30px 0px 0px;
+    z-index: 1;     
+}
+
+.titleAllComments{
+    display:flex;
+    justify-content: center;
+
+    p{
+        font-weight: bold;
+    }
+}
+
+.createComment{
+    display:flex;    
+    justify-content: center;
+    
+
+    .formComment{        
+        
+        display:flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        margin-bottom:3%;       
+             
+        
+        .input{
+            
+            background: #F8F8F8;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            width:75%;
+           
+
+            #textInput{
+                color:black;
+                margin-left:4%;
+            }
+            
+        }
+
+        ion-button{
+
+            padding:0;
+                        
+            
+
+            ion-icon{
+                font-size:2.1em;
+    
+                color: chocolate;
+            }
+
+        }
+
+                       
+    } 
+}
+
+.contentAllComments{
+    height:43%;
+    width: 90%;
+   
+    display: flex;   
+    flex-direction: row;
+    
+    margin:auto;    
+    margin-bottom:3%;
+    
+
+    background: #F8F8F8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;    
+    
+
+    ion-avatar{
+        margin-left:5%;
+        margin-top:6%;
+              
+                 
+        border: 1px solid #FF9121;
+    }
+  
+    .titleContent{   
+
+        display:flex;
+        flex-direction: column;
+        width:85%; 
+        margin-top:5%;
+
+        .alignTitle{
+            display:flex;
+            justify-content: space-between;
+
+
+            .iconDeleteComments{
+                color:red; 
+
+                font-size:1.3em;  
+                margin-right:4%;
+                margin-bottom:5%; 
+            }
+
+            .iconEditComments{
+                color:red; 
+
+                font-size:1.3em;  
+                margin-left:20%;
+                margin-bottom:5%;
+                
+            }
+
+            span{
+                margin:0;
+                margin-top:5%;
+                margin-left:4%;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width:100%;                
+                
+    
+                color: chocolate;
+                font-weight: bold;
+            }
+        }
+    }
+                                            
+    p{
+            
+        display: -webkit-box;
+        -webkit-line-clamp: 3;        
+        -webkit-box-orient: vertical; 
+        overflow:hidden;       
+        text-overflow: ellipsis;
+
+        width:92%;
+        height:70%;     
+        
+        color:black;
+        margin:0;
+        margin-left:4%;                                       
+        
+    }  
+    
+}
+

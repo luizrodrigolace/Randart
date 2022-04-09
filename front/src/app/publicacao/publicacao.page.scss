@@ -1,0 +1,212 @@
+.toolbar-header{
+    --background:#FFE5B7;
+
+    position: relative;
+}
+
+.toolbar-header::after{
+    content: "";
+
+    background-color: #F2800A;
+
+    height: 2%;
+    width: 80%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidemenu-button-header{
+    --color: #FF9121;
+
+    font-size: 2.5em;
+}
+
+.box-header-blank{
+    visibility: hidden;
+}
+
+.box-header-text{
+    width: 50%;
+
+    margin-top: 5%;
+}
+
+.header-text{
+    color: #F2800A;
+
+    font-size: 2em;
+    font-weight: bold;
+
+    margin: 0;
+}
+
+.header-title-span{
+    color: #FDBC59;
+}
+
+.background-image{
+    --background: url(/../assets/fundo/fundoPublicacao.png);
+}
+
+ion-content{
+    position: absolute;
+    z-index: 0;
+}
+
+.box-profile-picture{
+    position: relative;
+    z-index: 1;
+
+    top: 11%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture{
+    border-radius: 50%;
+    border: 1px solid #F2800A;
+
+    width: 27%;
+}
+
+.card-content{
+    background-color: #F8F8F8;
+
+    border: 1px solid #F2800A;
+    border-radius: 30px 30px 0px 0px;
+
+    height: 83%;
+
+    margin-bottom: 0;
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.publish-header{
+    text-align: center;
+
+    margin-top: 5%;
+}
+
+.card-subtitle{
+    color: #A0907F;
+
+    font-size: 1em;
+
+    margin-bottom: 2%;
+}
+
+.card-title{
+    color: #F2800A;
+
+    font-size: 1em;
+}
+
+.box-media{
+    background-color: #FFE2B7;
+
+    border: 1px solid #FF9121;
+    box-shadow: 0px 4px 4px #00000057;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40%;
+
+    margin: 5%;
+}
+
+.box-publish{
+    background-color: #F8F8F8;
+
+    border: 1px solid #F2800A;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 60%;
+    width: 29%;
+}
+
+.box-publish-icon{
+    border-bottom: 1px solid #a89e9e;
+
+    text-align: center;
+
+    width: 100%;
+
+    padding-bottom: 12%;
+}
+
+.publish-icon{
+    width: 70%;
+
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.box-publish-text{
+
+    margin-top: 4%;
+}
+
+.publish-text{
+    color: #F2800A;
+
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    
+    padding-top: 5%;
+    margin-bottom: 0;
+    margin-top: 1%;
+}
+
+.box-caption{
+    margin-left: 7%;
+    margin-right: 7%;   
+}
+
+.caption-text{
+    color: black;
+
+    border-bottom: 1px solid #a89e9e;
+
+    margin-top: 5%;
+
+    --padding-bottom: 3px;
+}
+
+.box-publish-button{
+    text-align: center;
+
+    height: 10%;
+
+    margin-top: 5%;
+
+}
+
+.publish-button{
+    --box-shadow: 0px 4px 4px #a89e9e;
+
+    font-weight: bold;
+    font-size: 1.2em;
+
+    width: 80%;
+}

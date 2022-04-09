@@ -1,0 +1,13 @@
+<div class="contentAllComments">          
+  <ion-avatar><img src="./assets/icon/iconeAvatar.png"></ion-avatar> 
+  <div class="titleContent"> 
+    <div class="alignTitle">
+      <span>{{comment.user.name}}</span> 
+      <div class="iconAlign">
+        <ion-icon class= "iconEditComments" name="create-outline" *ngIf="verifyLogged"  (click)="editMode(comment.id)"></ion-icon>
+        <ion-icon class= "iconDeleteComments" name="trash-outline" *ngIf="verifyLogged || isAdmin()"  (click)="deleteMode(comment.id)"></ion-icon>
+      </div>
+    </div>      
+    <p>{{comment.text}}</p>
+  </div>  
+</div> 

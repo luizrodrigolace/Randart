@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-header">
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-tab-button href="../home">
+          <ion-icon class="nav-icons" color="primary" name="arrow-back"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+      <div class="box-header-text">
+        <p class="header-text">P<span class="header-title-span">ublicação</span></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+  <div class="box-profile-picture">
+    <img class="profile-picture" src="../assets/icon/iconeAvatar.png" alt="foto de perfil usuário">
+  </div>
+  <ion-card class="card-content">
+    <ion-card-header class="publish-header">
+      <ion-card-title class="card-subtitle">Olá, #nome</ion-card-title>
+      <ion-card-title class="card-title">Hora de criar seu conteúdo!</ion-card-title>
+    </ion-card-header>
+    <div class="box-media">
+      <div class="box-publish" (click)="openToastChosenMedia()">
+        <div class="box-publish-icon">
+          <img class="publish-icon" src="../assets/icon/iconePublicar.png" alt="icone para publicar">
+        </div>
+        <div class="box-publish-text">
+          <p class="publish-text">Escolher</p>
+          <p class="publish-text">foto</p>
+        </div>
+      </div>
+    </div>
+    <form [formGroup]="postForm" (ngSubmit) = "sendPost(postForm)">
+      <div class="box-caption">
+        <ion-input class="caption-text" placeholder="Escreva uma legenda..." type="text" autoGrow="true" formControlName="text">
+        </ion-input>
+      </div>
+      <div class="box-caption">
+        <ion-input class="caption-text" placeholder="Categoria" type="text" formControlName="category"></ion-input>
+      </div>
+      <div class="box-publish-button">
+        <ion-button class="publish-button" shape="round" color="primary" (click)="sendPost(form)" [disabled]="postForm.invalid">Postar!</ion-button>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>

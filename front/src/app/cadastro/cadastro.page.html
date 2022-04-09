@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-tab-button href="../login">
+          <ion-icon class="nav-icons" name="arrow-back"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="box-header-logo">
+        <img class="logo-header" src="../assets/logo/logoRandart.png" alt="logo do aplicativo Randart">
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image" >
+    <ion-card class="register-card">
+      <ion-card-title class="card-title"> C<span class="title-span">adastro</span> </ion-card-title> 
+      <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+
+        <div class="register-input">
+          <ion-input class="register-text" placeholder="Email" type="text" formControlName="email"></ion-input>
+        </div>
+
+        <div class="register-input">
+          <ion-input class="register-text" placeholder="Nome completo" type="text" formControlName="name"></ion-input>
+        </div>
+
+        <div class="register-input">
+          <ion-input class="register-text" placeholder="Senha" type="password" formControlName="password"></ion-input>
+        </div>
+        
+        <ion-row>
+          <ion-button class="register-button" type="submit" shape="round" color="primary" [disabled]="registerForm.invalid">Cadastrar</ion-button>
+        </ion-row>
+      </form>
+    </ion-card>
+</ion-content>

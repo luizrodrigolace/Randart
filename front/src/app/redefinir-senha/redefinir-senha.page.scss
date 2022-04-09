@@ -1,0 +1,93 @@
+ion-toolbar{
+    --background:#f8c678;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ion-buttons{    
+    margin-left:2%;     
+}
+
+.box-header-logo{
+    width: 30%;
+}
+
+.box-header-blank{
+    visibility: hidden;
+}
+
+ion-content{
+    width: 100vw;
+    height: 100vh;  
+    
+    --background: url('/../assets/fundo/fundoLogin.png')
+}
+
+.conteinerCard{
+    display:flex;
+    justify-content: center;
+}
+
+ion-card{
+    height: 50%;
+    width:87%;    
+    margin-top: 33%;    
+
+    background:#f8f8f8;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+ion-card-title{
+
+    display: flex;
+    justify-content: center;  
+    margin-top:9%;  
+    
+    
+    text-transform: none;
+    color: #FFB971; 
+
+}
+
+.span{
+    color:#F2800A;
+}
+
+.Input{    
+
+    display:flex;
+    justify-content: center;
+
+    background:#ecf0f3;
+    height:12%;
+    box-shadow: 0px 4px 4px #F2800A, 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;         
+
+    margin-bottom:8%;
+
+    .textInput{
+        color: black;
+        margin-left: 4%;        
+    }
+
+}
+
+ion-button{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    margin-top: 8%;
+    margin-bottom:8%;
+
+    width:100%;
+}
+
+
+

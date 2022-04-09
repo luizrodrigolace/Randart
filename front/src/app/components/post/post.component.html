@@ -1,0 +1,36 @@
+<ion-card class="card-post">  
+  <ion-card-header>
+    <div class="box-card-header">
+      <div class="box-profile-picture">
+        <img class="profile-picture" (click)="RedirectToProfile(post.user.id)" src="../assets/icon/iconeAvatar.png" alt="foto do post">
+      </div>
+      <div class="box-card-text" *ngIf="this.post.user">
+        <ion-card-title class="post-profile-name">{{post.user.name}}</ion-card-title> 
+        <div class="controlIconHeader">
+          <ion-chip color="secundary">
+            <ion-icon name="pin"></ion-icon>
+            <ion-label>{{post.category}}</ion-label>
+          </ion-chip>        
+          <div class="deletePostButton">
+            <ion-icon class="iconDeletePost" (click)="deleteMode(post.id)" *ngIf="isAdmin()" name="trash-outline"></ion-icon> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-card-header>
+  <div class="box-content">
+    <div class="box-icons-media">
+      <div class="post-icons">
+          <ion-icon class="action-icons" (click)="likeAction(post.id)" name="{{likeIcon}}"></ion-icon>
+          <ion-icon class="action-icons" (click)="getId(post.id)" name="chatbubble-ellipses-outline"></ion-icon>
+          <ion-icon class="action-icons" name="share-social-outline"></ion-icon>          
+      </div>
+      <div class="post-media">
+        <img class="post-picture" src="../assets/icon/iconeAvatar.png" (click)="getId(post.id)" alt="foto de perfil usuário">
+      </div>
+    </div>
+    <div class="post-caption">
+      <p>{{post.text}}</p>
+    </div>
+  </div>
+</ion-card>

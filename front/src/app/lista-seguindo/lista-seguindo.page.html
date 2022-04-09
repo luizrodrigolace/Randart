@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-header">
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-tab-button (click)="backProfile()">
+          <ion-icon class="iconBackButton" name="arrow-back"></ion-icon>
+        </ion-tab-button> 
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+      <div class="box-header-text">
+        <p class="header-text">S<span class="header-title-span">eguindo</span></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+  <ion-card class="card-post">      
+    <app-seguindo *ngFor="let following of followings" [following]="following"></app-seguindo>    
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-buttons">
+      <div class="icons-box">
+        <ion-buttons slot="start">
+          <ion-menu-button class="sidemenu-button-footer"></ion-menu-button>
+        </ion-buttons>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button (click)="RedirectToOwnProfile()">
+          <ion-icon class="footer-icons" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button href="/home">
+          <ion-icon class="footer-icons" name="home-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

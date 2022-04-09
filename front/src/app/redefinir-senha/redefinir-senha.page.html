@@ -1,0 +1,39 @@
+
+<ion-header class="ion-no-border">    
+  <ion-toolbar>
+    <div class="nav-bar">
+      <div class="box-header-icon">  
+        <ion-tab-button (click)="backLogin()">
+          <ion-icon class="iconBackButton" name="arrow-back"></ion-icon>
+        </ion-tab-button> 
+      </div> 
+      <div class="box-header-logo">
+        <img class="logo-header" src="../assets/logo/logoRandart.png" alt="logo do aplicativo Randart">
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+    </div>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div class="conteinerCard">    
+    <ion-card>      
+      <ion-card-title> <span><span class="span">R</span>edefinir <span class="span">S</span>enha</span></ion-card-title>        
+      <ion-card-content>
+        <form class="conteinerForm" [formGroup] = "ChangePasswordForm" (ngSubmit) = "submitForm(ChangePasswordForm)">
+        <div class="Input">
+        <ion-input class="textInput" placeholder="Nova senha" type="password" formControlName = "password"></ion-input> 
+        </div>               
+        <div class="Input">
+          <ion-input class="textInput" placeholder ="Confirmar nova senha" type = "password" formControlName ="confirmPassword"></ion-input>  
+        </div>                 
+        <ion-row class="ion-justify-content-center">
+          <ion-button type="submit" shape="round" color="primary" [disabled]="ChangePasswordForm.invalid">Salvar</ion-button>
+        </ion-row>        
+        </form>            
+      </ion-card-content>
+    </ion-card>
+  </div>  
+</ion-content>

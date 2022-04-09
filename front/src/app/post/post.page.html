@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-header">
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-buttons slot ="start" (click)="backHome()">
+          <ion-icon class="iconBackButton" slot= "icon-only" name="arrow-back"></ion-icon>
+        </ion-buttons>  
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+      <div class="box-header-text">
+        <p class="header-text">P<span class="header-title-span">ost</span></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="conteinerGeneralPost">
+    <div class="firstPartPost">
+      <ion-avatar><img class="post-picture" src="../assets/icon/iconeAvatar.png" alt="foto de perfil usuário"></ion-avatar>
+      <div class="textProfilePost">
+        <div *ngIf="this.post.user">
+          <p>{{post.user.name}}</p>
+        </div>
+        <ion-chip color="secundary">
+          <ion-icon name="pin"></ion-icon>
+          <ion-label>Artes Cênicas</ion-label>
+        </ion-chip> 
+      </div>
+    </div>
+    <div class= "picturePost">
+      <img class="post-picture" src="../assets/icon/iconeAvatar.png" alt="imagem do post">
+    </div>
+    <div class="iconsPost">
+      <ion-icon name="{{favoriteIcon}}" *ngIf="!fav" (click)="likeAction()"></ion-icon>      
+      <ion-icon name="chatbubble-outline"></ion-icon>       
+    </div>
+    <div class="commentPost">
+      <p>{{post.text}}</p>
+      <ion-icon class= "iconEditComment" name="create-outline"></ion-icon>
+    </div>
+  </div>   
+
+  <div class="conteinerGeneralComments">
+    <div class= "titleAllComments">
+      <p>Comentários</p>
+    </div>
+
+    <div class="createComment">
+      <form  class="formComment" [formGroup] = "commentForm" (ngSubmit)= "sendComment()" *ngIf="!editMode">
+        <div class="input">
+          <ion-input id="textInput" placeholder ="Digitar um comentário..." type = "text" maxlength="118" formControlName ="text"></ion-input>  
+        </div>    
+        
+        <ion-button fill="clear" type= "submit" size="small">
+          <ion-icon name="arrow-forward-circle"></ion-icon>
+        </ion-button>
+      </form>         
+
+      <form  class="formComment" [formGroup] = "editCommentForm" (ngSubmit)= "updateComment()" *ngIf="editMode">
+        <div class="input">
+          <ion-input id="textInput" placeholder ="Modo edição de comentário..." type = "text" maxlength="118" formControlName ="text"></ion-input>  
+        </div>                
+        <ion-button fill="clear" type= "submit" size="small">
+          <ion-icon name="arrow-forward-circle"></ion-icon>
+        </ion-button>
+      </form>         
+    </div>
+ 
+    <app-comentario *ngFor="let comment of comments" [comment]="comment" (clickOnEdit)="toggleEdit($event)" (clickOnDelete)="alertDeleteComment($event)"></app-comentario>
+ </div>
+
+</ion-content>
+

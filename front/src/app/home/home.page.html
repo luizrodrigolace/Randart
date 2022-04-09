@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-header">
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-buttons slot="start">
+          <ion-menu-button class="sidemenu-button-header"></ion-menu-button>
+        </ion-buttons>
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+      <div class="box-header-text">
+        <p class="header-text">F<span class="header-title-span">eed</span></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">  
+  <app-post *ngFor="let post of posts" [post]="post" (clickOnDelete)=alertDeletePost($event) ></app-post>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user_id != null">
+    <ion-fab-button href="./publicacao" color="primary">
+      <ion-icon class="fab-icon" name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-buttons">
+      <div class="icons-box">
+        <ion-buttons slot="start">
+          <ion-menu-button class="sidemenu-button-footer"></ion-menu-button>
+        </ion-buttons>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button (click)="RedirectToOwnProfile()">
+          <ion-icon class="footer-icons" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button href="/home">
+          <ion-icon class="footer-icons" name="home-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

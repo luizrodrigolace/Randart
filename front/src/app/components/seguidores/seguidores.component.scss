@@ -1,0 +1,39 @@
+.cardUsersFollowing{
+    background: #EDF2F7;
+    box-shadow: 0px 4px 4px #FF9121, 0px 4px 4px #FFB971;
+    border-radius: 30px;
+
+    width: 85%;
+    height:11%;
+
+    margin:auto;
+    margin-top:9%;
+    margin-bottom:5%;
+}
+
+.contentUserFollowing{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-left:6%;  
+    
+    ion-avatar{
+        margin-top:1%;
+    }
+    
+    p{  
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width:60%;  
+
+        font-size:1.2em;
+        font-weight: bold;
+        color: #FF9121;
+
+        margin-top:7%;
+        margin-left:4%;
+        
+    }
+}

@@ -1,0 +1,112 @@
+
+.toolbar-header{
+    --background:#FFE5B7;
+
+    position: relative;
+}
+
+.toolbar-header::after{
+    content: "";
+
+    background-color: #F2800A;
+
+    height: 2%;
+    width: 80%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidemenu-button-header{
+    --color: #FF9121;
+
+    font-size: 2.5em;
+}
+
+.iconBackButton{
+    color:#FF9121; 
+}
+.box-header-blank{
+    visibility: hidden;
+}
+
+.box-header-text{
+    width: 57%;
+
+    margin-top: 5%;
+}
+
+.header-text{
+    color: #F2800A;
+
+    font-size: 2em;
+    font-weight: bold;
+
+     margin: 0;
+}
+
+.header-title-span{
+    color: #FDBC59;
+}
+
+.background-image{
+
+    width:100vw;
+    height: 100vh;
+    --background: url(/../assets/fundo/fundoHome.png);
+}
+
+.card-post{
+    --background: #F8F8F8;
+
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px #00000057;
+
+    height:100%;
+}
+
+.card-post::after{
+    content: "";
+
+    background-color: #FF9121;
+
+    height: 70%;
+    width: 1%;
+
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+}
+
+.footer-toolbar{
+    --background: #F88B53;
+}
+
+.footer-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icons-box{
+    margin: 2%;
+}
+
+.sidemenu-button-footer{
+    --color: black;
+
+    font-size: 2.5em;
+}
+
+
+
+

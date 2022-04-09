@@ -1,0 +1,120 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="toolbar-header">
+    <div class="nav-bar">
+      <div class="box-header-icon">
+        <ion-tab-button href="../home">
+          <ion-icon class="nav-icons" color="primary" name="arrow-back"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="box-header-blank">
+        blank
+      </div>
+      <div class="box-header-text">
+        <p class="header-text">P<span class="header-title-span">erfil</span></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+  <div class="box-profile-picture">
+    <img class="profile-picture" src="../assets/icon/iconeAvatar.png" alt="foto de perfil usuário">
+
+    <div class="box-buttons" *ngIf="ownProfileMode">
+      <ion-button class="follow-button" (click)="changeTemplateAction()" shape="round" color="primary" *ngIf="!editMode">Alterar perfil</ion-button>
+      <ion-button class="follow-button" (click)="changeTemplateAction()" shape="round" color="primary" *ngIf="editMode">Salvar alterações</ion-button>
+    </div>
+
+    <div class="box-buttons" *ngIf="otherProfileMode">
+    <ion-button class="follow-button" (click)="userFollowUser()" shape="round" color="primary" *ngIf="!followingMode" >Seguir</ion-button>
+    <ion-button class="follow-button" (click)="userUnfollowUser()" shape="round" color="primary" *ngIf="followingMode" >Deixar de Seguir</ion-button>
+    </div>
+    
+  </div>
+
+  <ion-card class="profile-card">
+    <div class="info-content">
+      <div class="box-header">
+        <div class="box-followers" (click)="RedirectToFollowersList()">
+          <ion-card-title class="title-text">1,2K</ion-card-title>
+          <ion-card-subtitle class="subtitle-text">Seguidores</ion-card-subtitle>
+        </div>
+        <div class="box-following" *ngIf="followingList" (click)="RedirectToFollowingList()">
+          <ion-card-title class="title-text">{{followingList.list_following.length}}</ion-card-title>
+          <ion-card-subtitle class="subtitle-text">Seguindo</ion-card-subtitle>
+        </div>
+      </div>
+      <div class="box-name" *ngIf="!editMode">
+        <p class="blank">blank</p>
+        <ion-card-title class="profile-name">{{user.name}}</ion-card-title>
+        <p class="blank" *ngIf="!editMode">blank</p>
+      </div>
+      <form [formGroup]="editNameForm" (ngSubmit)="saveChanges(editNameForm)" *ngIf="editMode">
+        <div class="box-name">
+          <div class="box-input">
+            <ion-input class="form-text" placeholder="Altere seu nome..." type="text" autoGrow="true" formControlName="name"></ion-input>
+          </div>
+          <div class="box-edit-button">
+            <ion-button class="submit-button" type="submit" color="primary" shape="round" [disabled]="editNameForm.invalid">Salvar</ion-button>
+          </div>
+        </div>
+      </form>
+      <div class="box-profile-info">
+        <div class="box-category">
+          <ion-card-subtitle class="subtitle-text">Categoria principal:</ion-card-subtitle>
+          <ion-card-title class="title-text" *ngIf="!editMode">{{user.category}}</ion-card-title>
+
+          <form [formGroup]="editCategoryForm" (ngSubmit)="saveChanges(editCategoryForm)" *ngIf="editMode">
+            <div class="category-info">
+              <div class="box-input">
+                <ion-input class="form-text" placeholder="Categoria" type="text" formControlName="category"></ion-input>
+              </div>
+              <div class="box-edit-button">
+                <ion-button class="submit-button" type="submit" color="primary" shape="round" [disabled]="editCategoryForm.invalid">Salvar</ion-button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="box-bio">
+          <p class="bio-text" *ngIf="!editMode">{{user.bio}}</p>
+          <form [formGroup]="editBioForm" (ngSubmit)="saveChanges(editBioForm)" *ngIf="editMode">
+            <div class="bio-info">
+              <div class="box-input">
+                <ion-textarea class="form-text" placeholder="Escreva uma bio..." type="text" autoGrow="true" formControlName="bio"></ion-textarea>
+              </div>
+              <div class="box-edit-button">
+                <ion-button class="submit-button" type="submit" color="primary" shape="round" [disabled]="editBioForm.invalid">Salvar</ion-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="all-user-post">
+      <app-profile-post *ngFor="let post of posts" [post]="post"></app-profile-post>
+    </div>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="footer-buttons">
+      <div class="icons-box">
+        <ion-buttons slot="start">
+          <ion-menu-button class="sidemenu-button-footer"></ion-menu-button>
+        </ion-buttons>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button (click)="RedirectToOwnProfile()">
+          <ion-icon class="footer-icons" name="person-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+      <div class="icons-box">
+        <ion-tab-button href="/home">
+          <ion-icon class="footer-icons" name="home-outline"></ion-icon>
+        </ion-tab-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

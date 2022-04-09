@@ -1,0 +1,82 @@
+ion-toolbar{
+    --background:#f8c678;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box-header-logo{
+    width: 30%;
+}
+
+.box-header-blank{
+    visibility: hidden;
+}
+
+.background-image{
+    --background: url(/../assets/fundo/fundoCadastro.png);
+}
+
+.register-card{
+    background-color: #F8F8F8;
+
+    box-shadow: 0 5px 6px 1px;
+    border-radius: 30px;
+
+    width: 85%;
+
+    margin: auto;
+    margin-top: 20%;
+}
+
+.card-title{
+    color: #F2800A;
+
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.title-span{
+    color: #F7C16F;
+}
+
+.register-input{
+    background-color: #ecf0f3;
+    color: #F38411;
+
+    display: flex;
+
+    border-radius: 25px;
+    box-shadow: 0 5px 5px;  
+
+    height: 6vh;
+
+    margin-bottom: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.register-text{
+    color: black;
+
+    margin-left: 4%;
+}
+
+.register-button{
+    --box-shadow: 0px 4px 4px #00000057;
+
+    font-weight: bold;
+
+    width: 100%;
+    
+    margin-top: 7%;
+    margin-bottom: 11%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
